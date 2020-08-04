@@ -23,7 +23,38 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Lista de tarefas"),
+        backgroundColor: Colors.lightBlueAccent,
+        centerTitle: true,
+      ),
+      body:Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                      decoration: InputDecoration(
+                          labelText: "Nova Tarefa",
+                          labelStyle: TextStyle(color: Colors.lightBlueAccent)
+                      )
+                  )
+                ),
+                RaisedButton(
+                  color: Colors.lightBlueAccent,
+                  child: Text("ADD"),
+                  textColor: Colors.white,
+                  onPressed: (){},
+                )
+              ],
+            ),
+          )
+        ],
+      )
+    );
   }
 
   Future<File> _getFile() async {
